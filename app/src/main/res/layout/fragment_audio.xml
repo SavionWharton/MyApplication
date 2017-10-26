@@ -20,7 +20,7 @@
         android:layout_marginTop="11dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volume"
+        android:text="Stop"
         android:layout_below="@+id/s_tone"
         tools:layout_editor_absoluteY="98dp"
         tools:layout_editor_absoluteX="148dp" />

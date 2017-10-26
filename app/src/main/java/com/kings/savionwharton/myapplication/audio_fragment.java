@@ -42,5 +42,10 @@ public class audio_fragment extends Fragment {
         mediaPlayer.start();
     }
 });
-
+view.findViewById(R.id.volume).setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        mediaPlayer.pause();
+    }
+});
 }}
