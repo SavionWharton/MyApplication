@@ -18,8 +18,6 @@ import android.widget.Toast;
 
 public class BrightnessFragment extends Fragment {
 
-    AppCompatSeekBar brightness_bar;
-    int screen_brightness;
 
     @Nullable
     @Override
@@ -30,38 +28,11 @@ return inflater.inflate(R.layout.fragment_brightness, null);    }
     public void onViewCreated(View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        brightness_bar = view.findViewById(R.id.light_bar);
-
-        screen_brightness = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS,0);
-
-        brightness_bar.setKeyProgressIncrement(5);
-
-        brightness_bar.setProgress(screen_brightness);
-
-        brightness_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-
-
+        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+            public void onClick(View view) {
 
-                screen_brightness = progress;
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-                Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
-                Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
-                Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, screen_brightness);
-
+                Toast.makeText(getActivity(), "Tap Car To Start App",Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:paddingTop="1dp">
 
     <RelativeLayout
-        android:paddingTop="20dp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:background="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

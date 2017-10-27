@@ -4,19 +4,9 @@
 
 
         <item
-            android:id="@+id/nav_Brightness"
-            android:icon="@drawable/ic_brightness_up"
-            android:title="Brightness" />
-        <item
-            android:id="@+id/nav_Audio"
-            android:icon="@drawable/ic_cyifvhiwqaa_yjf"
-            android:title="Audio"
-
-        />
-        <item
-            android:id="@+id/nav_Location"
-            android:icon="@drawable/ic_1600"
-            android:title="GPS" />
+            android:id="@+id/Help"
+            android:icon="@drawable/ic_help1600"
+            android:title="info" />
 
 
 </menu>

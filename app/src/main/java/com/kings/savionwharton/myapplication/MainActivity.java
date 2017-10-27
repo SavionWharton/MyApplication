@@ -78,16 +78,14 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         int id = item.getItemId();
 
-        if (id == R.id.nav_Brightness) {//handle brightness
+        if (id == R.id.Help) {//handle brightness
 
             fragment = new BrightnessFragment();
              }
-        else if (id == R.id.nav_Audio) {
-            fragment = new audio_fragment();
-            //handle sound
-                }
-        else if (id == R.id.nav_Location) {//handle gps location
-             }
+        //else if (id == R.id.nav_Audio) {
+            //fragment = new audio_fragment();
+            //handle sound}
+        //else if (id == R.id.nav_Location) {//handle gps location}
 
              if(fragment != null)
              {

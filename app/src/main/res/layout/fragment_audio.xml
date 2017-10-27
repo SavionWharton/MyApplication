@@ -16,11 +16,21 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/volume"
-        android:layout_marginTop="11dp"
+    android:id="@+id/volume"
+    android:layout_marginTop="80dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Pause"
+    android:layout_below="@+id/s_tone"
+    tools:layout_editor_absoluteY="98dp"
+    tools:layout_editor_absoluteX="148dp" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stop"
+        android:text="reset"
         android:layout_below="@+id/s_tone"
         tools:layout_editor_absoluteY="98dp"
         tools:layout_editor_absoluteX="148dp" />
