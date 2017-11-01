@@ -13,9 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class GUIActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Button btnS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,14 @@ public class GUIActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        btnS = (Button) findViewById(R.id.dBut);
+        btnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "It WORKED",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.sample);
 
