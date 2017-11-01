@@ -1,5 +1,6 @@
 package com.kings.savionwharton.myapplication;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,17 +18,43 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.nio.BufferUnderflowException;
+
 public class GUIActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button btnS;
+    public Button btnS;
+
+    protected void eyeDetect(){
+        btnS = (Button)findViewById(R.id.dBut);
+        btnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GUIActivity.this,EyeDetectionAlarm.class);
+                startActivity(intent);
+
+                Toast.makeText(getApplicationContext(),"Detecting.....",Toast.LENGTH_SHORT).show();
+
+
+
+            }
+        });
+    }
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gui);
+        eyeDetect();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -39,13 +66,6 @@ public class GUIActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnS = (Button) findViewById(R.id.dBut);
-        btnS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "It WORKED",Toast.LENGTH_SHORT).show();
-            }
-        });
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.sample);
 

@@ -3,6 +3,8 @@
     package="com.kings.savionwharton.myapplication">
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.camera.front.autofocus"/>
 
     <application
         android:allowBackup="true"
@@ -20,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".EyeDetectionAlarm" android:screenOrientation="landscape" />
     </application>
 
 </manifest>
