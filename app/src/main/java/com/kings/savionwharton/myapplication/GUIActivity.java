@@ -34,8 +34,7 @@ public class GUIActivity extends AppCompatActivity
                 startActivity(intent);
 
                 Toast.makeText(getApplicationContext(),"Detecting.....",Toast.LENGTH_SHORT).show();
-
-
+                
 
             }
         });
