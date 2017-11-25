@@ -7,6 +7,11 @@
             android:id="@+id/Help"
             android:icon="@drawable/ic_help1600"
             android:title="info" />
+        <item
+            android:id="@+id/locate"
+            android:icon="@drawable/ic_1600"
+            android:title="Location" />
+
 
 
 </menu>

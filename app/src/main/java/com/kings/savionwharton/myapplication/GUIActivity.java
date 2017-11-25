@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,7 @@ public class GUIActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public Button btnS;
+    //public Button btnM;
 
     protected void eyeDetect(){
         btnS = (Button)findViewById(R.id.dBut);
@@ -40,6 +42,19 @@ public class GUIActivity extends AppCompatActivity
         });
     }
 
+   // protected void Maps(){
+        //btnM = (Button)findViewById(R.id.locate);
+        //btnM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+          //      Intent map = new Intent(GUIActivity.this,MapsActivity.class);
+            //    startActivity(map);
+              //  Toast.makeText(getApplicationContext(),"Locating......",Toast.LENGTH_SHORT).show();
+        //    }
+        });
+
+    //}
+
 
 
 
@@ -49,6 +64,7 @@ public class GUIActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gui);
         eyeDetect();
+        //Maps();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -105,16 +121,21 @@ public class GUIActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         Fragment fragment = null;
+        FragmentActivity MapsActivity = null;
+
         int id = item.getItemId();
 
         if (id == R.id.Help) {//handle brightness
 
             fragment = new helpFrag();
         }
-        //else if (id == R.id.nav_Audio) {
-        //fragment = new audio_fragment();
+
+        else if (id == R.id.locate) {
+            MapsActivity = new MapsActivity();
+
+        }
         //handle sound}
-        //else if (id == R.id.nav_Location) {//handle gps location}
+        //else if (id == R.id.nav_audio) {//handle gps location}
 
         if(fragment != null)
         {
@@ -124,7 +145,12 @@ public class GUIActivity extends AppCompatActivity
             ft.replace(R.id.screen_area, fragment);
             ft.commit();
         }
+        if(MapsActivity != null)
 
+        {
+            MapsActivity.getFr
+
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
