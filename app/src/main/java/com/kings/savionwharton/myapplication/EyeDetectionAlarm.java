@@ -16,6 +16,8 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Handler;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -177,12 +179,21 @@ public class EyeDetectionAlarm extends AppCompatActivity implements CameraBridge
 
 
 
+
+
         //To  Initiate Camera
         myOpenCVCameraView = (CameraBridgeViewBase) findViewById(R.id.java_camera_view);
         myOpenCVCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         myOpenCVCameraView.setCvCameraViewListener(this);
 
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sample);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.t_1);
+
+
+
+
+
+
+
     }
 
     @Override
@@ -216,6 +227,7 @@ public class EyeDetectionAlarm extends AppCompatActivity implements CameraBridge
 
     @Override
     public void onBackPressed() {
+
         super.onBackPressed();
         finish();
     }
@@ -264,6 +276,7 @@ public class EyeDetectionAlarm extends AppCompatActivity implements CameraBridge
         }
 
 
+
         //To Sound Alarm
         try {
             if (EyesArray.length<1) { //sometimes it picks up a 3rd eye lol
@@ -284,6 +297,9 @@ public class EyeDetectionAlarm extends AppCompatActivity implements CameraBridge
         } catch (Exception e) {
             Log.e(TAG, "Failed to Configure Alarm");
         }
+
+
+
 
 
         //To Detect Amount of Redness in the Eyes

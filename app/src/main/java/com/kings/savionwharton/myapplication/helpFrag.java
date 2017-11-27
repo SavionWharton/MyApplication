@@ -37,5 +37,15 @@ return inflater.inflate(R.layout.fragment_brightness, null);    }
             }
         });
 
+        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getActivity(), "Tap Location Marker On Bottom Left",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
     }
+
 }

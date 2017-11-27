@@ -21,11 +21,30 @@
             android:layout_marginLeft="65dp"
             android:layout_marginTop="75dp"
             android:background="@color/colorbt"
+            android:onClick="eyeDetect"/>
 
-            android:onClick="eyeDetect"
-            android:textColor="@color/colorbtxt"
-            android:textSize="30dp" />
     </RelativeLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/find"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_locate_gps_navigation_pin_point_location_icon_icon"
+            android:onClick="Maps"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="174dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.955"
+            android:layout_marginRight="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <include
         layout="@layout/app_bar_gui"
@@ -42,5 +61,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_gui"
         app:menu="@menu/activity_main_drawer" />
+
 
 </android.support.v4.widget.DrawerLayout>
